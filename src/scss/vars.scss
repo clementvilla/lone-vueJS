@@ -331,5 +331,74 @@ $maxColumns : 12;
 }
 
 
+//font title
+$fontTitle: "Rubik Mono One", Arial, sans-serif;
+$fontText: "Open Sans", Arial, sans-serif;
 
+
+.title{
+  margin: 0;
+  font-family: $fontTitle; 
+  color: $primaryColor;
+  @include font-size(36, 45);
+  @include small-down(){
+    @include font-size(24, 30);
+  }
+  &.-small{
+    @include font-size(18, 22);
+  }
+  &.-big{
+    @include font-size(64, 79);
+    @include small-down(){
+      @include font-size(24, 30);
+    }
+  }
+  &.-colorWhite{
+    color: $white;
+  }
+  &.-textCenter{
+    text-align: center;
+    margin: 40px auto;
+  }
+}
+
+//Font texte
+
+p{
+  font-family: $fontText;
+  color: $white;
+  &.-colorBlack{
+    color: $black;
+  }
+  @include font-size(18, 25);
+   
+    @include small-down(){
+      @include font-size(16, 22);
+    }
+
+}
+
+.fontFooter{
+  font-family: $fontText; 
+  &.-footerTitle{
+    font-family: $fontTitle;
+  }
+  color: $white;
+  @include font-size(12, 26);
+  &.-fontCGU{
+    @include font-size(10,26);
+  }
+}
+
+.fontLink{
+  font-family: $fontText;
+  color: $white;
+  text-decoration: none;
+  @include font-size(18, 25);
+   
+    @include small-down(){
+      @include font-size(16, 22);
+    }
+
+}
 
