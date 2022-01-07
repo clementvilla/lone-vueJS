@@ -1,6 +1,5 @@
 <template>
   <footer>
-    <hr />
     <div class="c-footer__container">
       <div class="row -center">
         <div class="col-4">
