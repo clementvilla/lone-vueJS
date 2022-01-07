@@ -31,10 +31,29 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    this.getId()
+  },
+  methods: {
+    getId() {
+      axios.get(`https://lone.ambregeiss.fr/wp-json/wp/v2/posts`)
+     .then(response => {
+      // JSON responses are automatically parsed.
+      let articles = response.data
+      console.log(articles[0].id);
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+    },
   }
 }
 </script>
