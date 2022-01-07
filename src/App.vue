@@ -3,8 +3,9 @@
     <div id="nav">
      <Header />
     </div>
-    <Footer />
+    
     <router-view/>
+    <Footer />
   </div>
 </template>
 
