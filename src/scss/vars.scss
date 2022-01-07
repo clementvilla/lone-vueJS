@@ -1,1 +1,335 @@
-$black: rgb(0, 0, 0);
+@use "sass:math";
+
+$rootFontSize : 16;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik+Mono+One&display=swap');
+
+// Couleurs
+$primaryColor: #5EFC8D;
+$black: #1F1F1F;
+$white: #FBF5F3;
+$grey: #222227;
+$greyBorder : #3C3C3C;
+
+//Font 
+$fontTitle: 'Rubik Mono One', sans-serif;
+$fontText: "Open Sans", Arial, sans-serif;
+
+// bouton
+$fontButton: "rubik mono one", Arial, sans-serif; 
+
+// Fonts
+$textFont : "Open Sans", Arial;
+$titleFont : "Roboto Condensed", Arial;
+
+// breakpoints
+$small : 460px;
+$medium : 640px;
+$large : 960px;
+$x-large : 1200px;
+
+
+//FUNCTIONS
+
+@function pxToRem($value) {
+  @return math.div($value, $rootFontSize) + rem;
+}
+
+@function calculate-width($i){
+  @return math.div($i, 12) * 100%;
+}
+
+@mixin title {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  
+  
+  @mixin font-size($fontsize, $lineheight : "auto"){
+    font-size : pxToRem($fontsize);
+    @if $lineheight == "auto"{
+        line-height: pxToRem($fontsize + 2);
+    }
+    @else{
+        line-height: pxToRem($lineheight);
+    }
+  }
+  
+  
+  $small : 460px;
+  $medium : 640px;
+  $large : 960px;
+  $x-large : 1200px;
+  
+  
+  @mixin x-small-only(){
+    @media screen and (max-width : ($small - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin small-down(){
+    @media screen and (max-width : ($medium - 1)){
+        @content;
+    } 
+  }
+  @mixin small-up(){
+    @media screen and (min-width : $small){
+        @content;
+    } 
+  }
+  @mixin small-only(){
+    @media screen and (min-width : $small) and (max-width : ($medium - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin medium-up(){
+    @media screen and (min-width : $medium){
+        @content;
+    } 
+  }
+  
+  @mixin medium-only(){
+    @media screen and (min-width : $medium) and (min-width : ($large - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin large-down(){
+    @media screen and (max-width : ($large - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin large-up(){
+    @media screen and (min-width : $large){
+        @content;
+    } 
+  }
+  
+  @mixin large-only(){
+    @media screen and (min-width : $large) and (max-width : (x-large - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin x-large-up(){
+    @media screen and (min-width : $x-large){
+        @content;
+    } 
+  }
+  
+  @mixin background-image($urlx1, $urlx2){
+    background-image : url($urlx1);
+    @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        background-image : url($urlx2);
+    }
+  }
+  
+  @mixin aspect-ratio($ratio-or-width, $height: null) {
+    $padding: if($height, percentage($height/$ratio-or-width), percentage(1/$ratio-or-width));
+    &:before {
+      content: '';
+      display: block;
+      float: left;
+      padding-bottom: $padding;
+    }
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+  
+//MIXINS
+
+@mixin title {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  
+  
+  @mixin font-size($fontsize, $lineheight : "auto"){
+    font-size : pxToRem($fontsize);
+    @if $lineheight == "auto"{
+        line-height: pxToRem($fontsize + 2);
+    }
+    @else{
+        line-height: pxToRem($lineheight);
+    }
+  }
+  
+  
+  $small : 460px;
+  $medium : 640px;
+  $large : 960px;
+  $x-large : 1200px;
+  
+  
+  @mixin x-small-only(){
+    @media screen and (max-width : ($small - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin small-down(){
+    @media screen and (max-width : ($medium - 1)){
+        @content;
+    } 
+  }
+  @mixin small-up(){
+    @media screen and (min-width : $small){
+        @content;
+    } 
+  }
+  @mixin small-only(){
+    @media screen and (min-width : $small) and (max-width : ($medium - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin medium-up(){
+    @media screen and (min-width : $medium){
+        @content;
+    } 
+  }
+  
+  @mixin medium-only(){
+    @media screen and (min-width : $medium) and (min-width : ($large - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin large-down(){
+    @media screen and (max-width : ($large - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin large-up(){
+    @media screen and (min-width : $large){
+        @content;
+    } 
+  }
+  
+  @mixin large-only(){
+    @media screen and (min-width : $large) and (max-width : (x-large - 1)){
+        @content;
+    } 
+  }
+  
+  @mixin x-large-up(){
+    @media screen and (min-width : $x-large){
+        @content;
+    } 
+  }
+  
+  @mixin background-image($urlx1, $urlx2){
+    background-image : url($urlx1);
+    @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        background-image : url($urlx2);
+    }
+  }
+  
+  @mixin aspect-ratio($ratio-or-width, $height: null) {
+    $padding: if($height, percentage($height/$ratio-or-width), percentage(1/$ratio-or-width));
+    &:before {
+      content: '';
+      display: block;
+      float: left;
+      padding-bottom: $padding;
+    }
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+  
+  
+//GRID
+
+$maxColumns : 12;
+
+.container{
+    max-width: 1500px;
+    margin : 0 auto;
+    margin-bottom: 120px;
+    &.-fullWidth{
+        max-width: 100%;
+    }
+}
+
+.row{
+    display : flex;
+    flex-wrap: wrap;
+    &.-center{
+      justify-content:center;
+    }
+    &.-vcenter{
+        align-items: center;
+    }
+    &.-nowrap{
+        flex-wrap: nowrap;
+    }
+    &.-noGutter{
+        div[class^="col"]{
+            padding: 0;
+          
+          }
+    }
+    &.-reverse{
+        flex-direction: row-reverse;
+    }
+    &.-flex-end{
+        justify-content: flex-end;
+        margin-right: 100px;
+    }
+    div[class^="col"]{
+        padding: 2rem;
+    }
+}
+
+
+
+@for $i from 1 through $maxColumns{
+    .col-#{$i}{
+        flex-basis : calculate-width($i);
+        max-width: calculate-width($i);
+    }
+    
+}
+
+@include medium-up(){
+    @for $i from 1 through $maxColumns{
+        .col-md-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+       
+    }
+}
+
+@include large-up(){
+    @for $i from 1 through $maxColumns{
+        .col-l-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+    }
+}
+@include x-large-up(){
+    @for $i from 1 through $maxColumns{
+        .col-xl-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+    }
+}
+
+
+
+
