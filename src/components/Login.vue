@@ -1,12 +1,7 @@
 <template>
   <div class="container">
     <div class="row -center">
-      <h1 class="title -big -textCenter">Inscription</h1>
-
-      <div class="col-12">
-        <p class="textCenter">Inscris toi pour sauvegarder tes créations.</p>
-      </div>
-
+      <h1 class="title -big -textCenter">Connexion</h1>
       <form @submit="submit" class="contact">
         <div class="row">
           <div class="container_input">
@@ -37,7 +32,7 @@
         </div>
 
         <div class="cont">
-          <button type="submit" class="button">S'inscrire</button>
+          <button type="submit" class="button">Connexion</button>
         </div>
       </form>
     </div>
@@ -80,6 +75,12 @@ export default {
               console.log(response);
             this.success = true;
             this.error = false;
+
+            this.$store.commit('setUser',{
+                username: response.data.data.displayName,
+                email: response.data.data.email,
+                authToken: response.data.data.authToken
+            })
           }
         })
         .catch((error) => {

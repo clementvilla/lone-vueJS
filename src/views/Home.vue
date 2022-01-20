@@ -108,9 +108,6 @@
 </template>
 
 <script>
-import Shoes from "@/components/Shoes";
-import CarreGris from "@/components/CarreGris";
-import Concept from "@/components/Concept";
 
   import Shoes from "@/components/Shoes";
   import CarreGris from "@/components/CarreGris";
