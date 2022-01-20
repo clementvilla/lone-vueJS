@@ -6,6 +6,7 @@
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__logo">
+                  <router-link to="/" class="fontLink">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 178 74.47"
@@ -55,6 +56,7 @@
                       </g>
                     </g>
                   </svg>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -63,9 +65,10 @@
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__link">
-                  <a href="#" class="fontLink">Nous découvrir</a>
-                  <a href="#" class="fontLink">Personaliser</a>
-                  <a href="#" class="fontLink">Contact</a>
+                  <router-link to="/decouvrir" class="fontLink">Nous découvrir</router-link>
+                  <router-link to="/personnalisation" class="fontLink">Personaliser</router-link>
+                  <router-link to="/contact" class="fontLink">Contact</router-link>
+                  Bonjour, {{user.displayName}}, {{user.email}}
                 </div>
               </div>
             </div>
@@ -88,7 +91,7 @@
                       d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <svg
+                  <svg v-if="user.displayName != null"
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-6 w-6"
                     fill="none"
@@ -102,7 +105,7 @@
                       d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                     />
                   </svg>
-                  <svg
+                  <svg 
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-6 w-6"
                     fill="none"
@@ -127,7 +130,13 @@
 
 
 <script>
-export default {};
+export default {
+  computed:{
+    user(){
+      return this.$store.state.user
+    },
+  }
+};
 </script>
 
 

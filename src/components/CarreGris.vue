@@ -56,3 +56,18 @@
         }
     }
 </style>
+
+return {
+      donnees: [],
+    }
+  },
+  created() {
+    axios.get('https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/7%27)
+        .then(function (response) {
+          console.log(response.data);
+          this.donnees = response.data;
+        }.bind(this))
+        .catch(function (error) {
+          console.log(error);
+        })
+  }

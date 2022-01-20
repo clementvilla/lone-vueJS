@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Register from '../views/Register.vue'
+import Login from '../views/Login.vue'
+import Personnalisation from '../views/Personnalisation.vue'
 import Faq from '../views/Faq.vue'
 import MesCreations from '../views/MesCreations.vue'
 import Precommande from '../views/Precommande.vue'
@@ -13,6 +16,21 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  },
+  {
+    path:'/login',
+    name:'Login',
+    component: Login
+  },
+  {
+    path:'/personnalisation',
+    name:'personnalisation',
+    component: Personnalisation
   },
   {
     path: '/about',
