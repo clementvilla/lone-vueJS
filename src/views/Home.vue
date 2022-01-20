@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-  
+    
     <Shoes />
     <CarreGris />
     <Concept />
