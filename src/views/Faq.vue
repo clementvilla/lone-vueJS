@@ -2,6 +2,7 @@
 <div class="page">
     <TitrePage />
     <div class="faq">
+      
         <VueFaqAccordion :items="myItems" />
     </div>
 </div>
@@ -44,6 +45,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style lang="scss">

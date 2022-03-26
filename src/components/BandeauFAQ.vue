@@ -23,6 +23,12 @@ export default {
   data() {
     return {
       data: {
+        acf:{
+          bandeauFAQ:{
+            titremidwhite:'',
+            paragraph:''
+          }
+        }
       },
     };
   },
