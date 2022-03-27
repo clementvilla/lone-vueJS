@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div class="row -center">
-      <h1 class="title -big -textCenter">Connexion</h1>
       <form @submit="submit" class="contact">
         <div class="row">
           <div class="container_input">

@@ -1,25 +1,45 @@
 <template>
-<div class="page">
-    <TitrePage />
+  <div class="page">
+    <h1 class="title -big -textCenter" v-html="data.title.rendered"></h1>
+    
     <div class="faq">
       
         <VueFaqAccordion :items="myItems" />
     </div>
-</div>
-
+  </div>
 </template>
 
 <script>
-import VueFaqAccordion from 'vue-faq-accordion';
-import TitrePage from '@/components/TitrePage';
+import VueFaqAccordion from "vue-faq-accordion";
+import axios from "axios";
 
 export default {
   components: {
-    TitrePage,
-    VueFaqAccordion
+    VueFaqAccordion,
   },
-  data () {
+  created() {
+    axios
+      .get("https://lone.ambregeiss.fr/wp-json/wp/v2/pages/28915")
+      .then(
+        function (response) {
+          this.data = response.data;
+          console.log(response.data);
+          //console.log(response.data.title);
+          console.log(response.data.acf.qa.blocqa);
+        }.bind(this)
+      )
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+  data() {
     return {
+      data: {
+        title: {
+          rendered: "",
+          ask:""
+        },
+      },
       myItems: [
           {
             title: 'How many time zones are there in all?',
@@ -49,66 +69,39 @@ export default {
 </script>
 
 <style lang="scss">
-    .faq {
-        margin-bottom: 40px;
-    }
-    .faq-wrapper[data-v-5d9392b3] {
-        max-width: 825px;
-        margin: auto;
-    }
-
-    .faq__nav-item, .faq__nav-item_active[data-v-5d9392b3] {
-        color: $primaryColor !important;
-        font-family: $fontText;
-    }
-
-    .accordion__toggle-button[data-v-5d9392b3]::before, .accordion__toggle-button[data-v-5d9392b3]::after {
-        background: $primaryColor !important;
-    }
-
-    .accordion__value {
-        color: $white !important;
-    }
-
-    .accordion[data-v-5d9392b3] {
-        border: 2px solid $primaryColor !important;
-        border-radius: 0px !important;
-    }
-
-    .accordion__item[data-v-5d9392b3] {
-        border-bottom: 2px solid $primaryColor !important;
-    }
-
-    .accordion__item[data-v-5d9392b3]:last-child {
-        border-bottom: none !important;
-    }
-
-</style>
-
-<!--template>
-    <div class="faq">
-
-        <Question v-on:closed="closeAllItems" />
-        <Question v-on:closed="closeAllItems"/>
-        <Question v-on:closed="closeAllItems"/>
-        <Question v-on:closed="closeAllItems"/>
-        <Question v-on:closed="closeAllItems"/>
-        <Question v-on:closed="closeAllItems"/>
-
-    </div>
-</template>
-
-<script>
-import Question from '../components/Question.vue';
-
-export default {
-    components: {
-        Question
-    },
-    methods: {
-        closeAllItems(){
-            
-        }
-    }
+.faq {
+  margin-bottom: 40px;
 }
-</script-->
+.faq-wrapper[data-v-5d9392b3] {
+  max-width: 825px;
+  margin: auto;
+}
+
+.faq__nav-item,
+.faq__nav-item_active[data-v-5d9392b3] {
+  color: $primaryColor !important;
+  font-family: $fontText;
+}
+
+.accordion__toggle-button[data-v-5d9392b3]::before,
+.accordion__toggle-button[data-v-5d9392b3]::after {
+  background: $primaryColor !important;
+}
+
+.accordion__value {
+  color: $white !important;
+}
+
+.accordion[data-v-5d9392b3] {
+  border: 2px solid $primaryColor !important;
+  border-radius: 0px !important;
+}
+
+.accordion__item[data-v-5d9392b3] {
+  border-bottom: 2px solid $primaryColor !important;
+}
+
+.accordion__item[data-v-5d9392b3]:last-child {
+  border-bottom: none !important;
+}
+</style>

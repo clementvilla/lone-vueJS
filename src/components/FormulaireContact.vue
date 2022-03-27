@@ -53,8 +53,7 @@ input{
     outline: 0;
     &::placeholder{
         font-family: $fontText;   
-       }
-    
+    }
 }
 
 .container_input{
@@ -64,7 +63,7 @@ input{
     width: 50%;
 }
 
-.container_textarea{
+.container_textarea {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -76,7 +75,7 @@ input{
     }
 }
 
-textarea{
+textarea {
     width: 80%;
     min-height: 100px;
     background: none;
