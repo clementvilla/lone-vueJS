@@ -12,7 +12,7 @@
         <div class="col-xl-6 col-l-12 col-md-6 col-12">
           <div class="c-creation">
             <p class="c-creation__texte">{{ chaussure.title.rendered }}</p>
-            <div class="cont">
+            <div @click="modifier" class="cont">
               <a href="#" class="button">Modifier</a>
             </div>
           </div>
@@ -35,6 +35,13 @@ export default {
     this.getShoe();
   },
   methods: {
+    modifier(){
+      this.$router.push('/personnalisation'),
+      axios
+        .get(
+          `https://lone.ambregeiss.fr/wp-json/wp/v2/chaussure?author=${this.$store.state.user.id}`
+        )
+    },
     getShoe() {
       axios
         .get(
