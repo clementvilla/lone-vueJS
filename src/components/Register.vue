@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div class="row -center">
-      <h1 class="title -big -textCenter">Inscription</h1>
 
       <div class="col-12">
         <p class="textCenter">Inscris toi pour sauvegarder tes créations.</p>
