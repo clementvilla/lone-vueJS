@@ -1,32 +1,27 @@
 <template>
   <div class="container__personnalisation">
     <div class="buttonBack">
-      <a @click="$router.go(-1)"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7"
-          /></svg
-      ></a>
+      <a @click="$router.go(-1)"><svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg></a>
     </div>
     <div class="c-chaussure__container">
       <div id="image-slider" class="splide">
         <div class="splide__track" id="splide__track">
           <Splide @splide:active="viewPicked" :options="options" >
             <splide-slide>
-              <img src="../assets/cote.png" alt="" />   
-              <img class="layer" src="../assets/cuir-bleu.png" alt="">       
+              <!-- image basket blanche côté -->
+              <img src="@/assets/cote.png" alt="" />   
+              <!-- Image avant chaussure vue 1 -->
+              <img class="layer bleu avant vue1" src="@/assets/cuir-bleu.png" alt="">
+              <img class="layer vert avant vue1" src="@/assets/cuir-vert.png" alt="">       
+              <img class="layer violet avant vue1" src="@/assets/cuir-violet.png" alt="">              
             </splide-slide>
             <splide-slide>
-              <img src="../assets/dessus.png" alt="" />
+              <!-- image basket blanche dessus -->
+              <img src="@/assets/dessus.png" alt="" />
+              <!-- Image avant chaussure vue 2 -->
+              <img class="layer bleu avant vue2" src="@/assets/cuir-av-bleu.png" alt="">
+              <img class="layer vert avant vue2" src="@/assets/cuir-av-vert.png" alt="">    
+              <img class="layer violet avant vue2" src="@/assets/cuir-av-violet.png" alt="">           
             </splide-slide>
           </Splide>
         </div>
@@ -35,37 +30,9 @@
         <div class="cont">
           <button @click="saveShoeHandler" class="button">Terminé</button>
         </div>
-        <a href=""
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-            /></svg
-        ></a>
-        <a href=""
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            /></svg
-        ></a>
-      </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+        <svg @click="reset()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg></div>
     </div>
     <div class="c-indicatifTitre title -small">Semelles</div>
     <div class="c-listPersonnalisation">
@@ -77,7 +44,7 @@
       :key="index"
       @click="colorPicked($event, label)"
     >
-    <div class="color">
+    <div :class="`color${index + 1} color`">
       <div :class="`cercle${index + 1}`"></div>
     </div>
       <p>{{ label }}</p>
@@ -101,36 +68,10 @@
     </div>
     <div class="c-validation">
       <div id="check" @click="checked()">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 13l4 4L19 7"
-            /></svg
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
       </div>
       <div id="tick" @click="unchecked()">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            /></svg
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </div>
     </div>
   </div>
@@ -145,8 +86,8 @@ export default {
         shoeName: '',
         shoeCreated: false,
       options: {
-        type: "loop",
         perPage: 1,
+        type: 'loop',
       },
       props:{
         isChecked: false,
@@ -163,18 +104,8 @@ export default {
         "vue1",
         "vue2",
       ],
-      choix: {
-        Arriere: "blanc",
-        corsp_arriere: "blanc",
-        corsp_avant: "blanc",
-        doublure: "blanc",
-        lacet: "blanc",
-        languette: "blanc",
-        toe_box: "blanc",
-        avant: "blanc",
-      },
       parts:[
-        "Devant",
+        "Avant",
         "Derrière",
         "Long",
         "Large",
@@ -182,9 +113,9 @@ export default {
         "Petit",
       ],
       colors: [
-        "Blanc",
-        "Noir",
-        "Gris",
+        "Vert",
+        "Violet",
+        "Bleu",
         "Rouge",
         "Vert",
         "Lavande",
@@ -192,13 +123,9 @@ export default {
     };
   },
   mounted() {
-    this.canvas = document.querySelector('.c-chaussure__container')
-    axios
-      .get("https://lone.ambregeiss.fr/wp-json/wp/v2/posts")
-      .then((response) => {
-        this.data = response.data
-          console.log(response.data[0].id)
-      });
+    this.canvas = document.querySelector('#splide01-slide01')
+    this.canvas2 = document.querySelector('#splide01-slide02')
+    this.clone = document.querySelector('.splide__slide--clone')
   },
   methods: {
        saveShoeHandler() {
@@ -233,7 +160,6 @@ export default {
                     }
                 })
                 .then(response => {
-                console.log('test');
 
                     // If we get an id in the response data,
                     // it means that an actual image has been saved
@@ -256,6 +182,7 @@ export default {
          * @param imageURL - URL of the image freshly generated
          */
         createShoe(imageURL) {
+          console.log('testcreate')
  
             axios.post('https://lone.ambregeiss.fr/wp-json/wp/v2/chaussure',
                 {
@@ -276,33 +203,33 @@ export default {
                     this.shoeCreated = true
                 })
         },
+            
         //CHANGEMENT DE LA VUE
-        viewPicked(splide, view){
-          console.log(splide.length)
-          let btnActif = document.querySelectorAll(".splide__arrow")
-          console.log(btnActif)
-          console.log('function interieur de view picked' + this.configuration.view)
+        viewPicked(){
+          if(this.configuration.view == this.views[1]){
+            this.configuration.view == this.views[0]
+            console.log('Ici la vue1 normalement' + this.configuration.view)
+          }
+          else{
+            this.configuration.view == this.views[1]
+            console.log('Ici la vue 2 normalement')
+          }
 
           //Permet d'appliquer le classe défaut aux éléments de base en blanc de la chaussure
-          this.canvas.querySelectorAll("." + view + ".blanc").forEach( (item) => {
-              item.classList.add("default")
-          })
+          // this.canvas.querySelectorAll("." + view + ".blanc").forEach( (item) => {
+          //     item.classList.add("default")
+          // })
 
           //Utile au changement
-          this.configuration.view = view
-          for (const property in this.choix) {
-            this.canvas.querySelector(`.${property}.${this.choix[property]}` + "." + view).classList.add("show")
-          }
+
+          // for (const property in this.choix) {
+          //   this.canvas.querySelector(`.${property}.${this.choix[property]}` + "." + view).classList.add("show")
+          // }
         },
-        partsPicked(label){
-          let titrePart = document.querySelector('.c-indicatifTitre')
-          this.configuration.parts = label
-          titrePart.innerHTML = this.configuration.parts
-        },
+        //Vérification état du bouton
         checked(){
           if(this.props.isChecked == true){
             this.props.isChecked = true
-            console.log('test')
             console.log(this.props.isChecked)
           }
           document.querySelector('.liste-couleurs').style.display ="block"
@@ -315,8 +242,51 @@ export default {
           document.querySelector('.liste-parties').style.display ="block"
           console.log(this.props.isChecked)
         },
-        colorPicked(event, label){
+        //Choix de la partie de la chaussure
+        partsPicked(label){
+          let titrePart = document.querySelector('.c-indicatifTitre')
+          this.configuration.parts = label
+          titrePart.innerHTML = this.configuration.parts
+
+          //Défini l'élément sélectionné
+          this.configuration.parts = label.toLowerCase()
+        },
+        //Application du choix de la couleur
+        colorPicked(event, label) {
           this.configuration.color = label.toLowerCase();
+
+          this.canvas.querySelectorAll(`.${this.configuration.parts}`)
+            .forEach((item) => {
+              item.classList.remove("show");
+            });
+
+            this.canvas2.querySelectorAll(`.${this.configuration.parts}`)
+            .forEach((item) => {
+              item.classList.remove("show");
+            });
+
+          //Pour la slide 1
+          this.canvas.querySelector(
+              `.${this.configuration.color}.${this.configuration.parts}.vue1`
+            )
+            .classList.add("show");
+
+          //Pour la slide 2
+            this.canvas2.querySelector(
+              `.${this.configuration.color}.${this.configuration.parts}.vue2`
+            )
+            .classList.add("show");
+        },
+        //Reset de la config chaussure
+        reset() {
+          console.log("reset")
+          this.canvas.querySelectorAll("img").forEach((item) => {
+              item.classList.remove("show");
+          });
+
+          this.canvas2.querySelectorAll("img").forEach((item) => {
+              item.classList.remove("show");
+          });
         },
   },
 };
@@ -349,7 +319,11 @@ export default {
     display: block;
     margin: auto;
   }
-  .layer{
+  .avant{
+    display:none;
+  }
+  .show{
+    display: block;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -427,6 +401,7 @@ export default {
       height: 100%;
       width: 100%;
       padding: 30px;
+      cursor: pointer;
     }
   }
 }
@@ -487,7 +462,6 @@ export default {
 .color {
   width: 58px;
   height: 58px;
-  background-color: red;
   border-radius: 100%;
   display: block;
   margin: auto;
@@ -495,6 +469,15 @@ export default {
     width: 38px;
     height: 38px;
   }
+}
+.color1{
+  background-color: green;
+}
+.color2{
+  background-color: purple;
+}
+.color3{
+  background-color: blue;
 }
 
 .c-listPersonnalisation::-webkit-scrollbar {
