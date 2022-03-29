@@ -11,23 +11,37 @@
               <!-- image basket blanche côté -->
               <img src="@/assets/cote.png" alt="Modèle de chaussure vue de côté" />   
               <!-- Image avant chaussure vue 1 -->
-              <img class="layer bleu avant vue1" src="@/assets/cuir-bleu.png" alt="Avant bleu de la chaussure">
-              <img class="layer vert avant vue1" src="@/assets/cuir-vert.png" alt="Avant vert de la chaussure">       
-              <img class="layer violet avant vue1" src="@/assets/cuir-violet.png" alt="Avant violet de la chaussure">
-              <img class="layer bleu bande vue1" src="@/assets/bandes-cote-bleue.png" alt="Bande bleu de la chaussure">   
-              <img class="layer vert bande vue1" src="@/assets/bandes-cote-vertes.png" alt="Bande vert de la chaussure">   
-              <img class="layer violet bande vue1" src="@/assets/bande-cote-violette.png" alt="Bande violet de la chaussure">
+              <img class="layer bleu avant vue1" src="@/assets/cuir-bleu.png" alt="">
+              <img class="layer vert avant vue1" src="@/assets/cuir-vert.png" alt="">       
+              <img class="layer violet avant vue1" src="@/assets/cuir-violet.png" alt="">
+              <img class="layer bleu bande vue1" src="@/assets/bandes-cote-bleue.png" alt="">   
+              <img class="layer vert bande vue1" src="@/assets/bandes-cote-vertes.png" alt="">   
+              <img class="layer violet bande vue1" src="@/assets/bande-cote-violette.png" alt="">
+              <img class="layer bleu mousse vue1" src="@/assets/mousse-cote-bleu.png" alt="">   
+              <img class="layer vert mousse vue1" src="@/assets/mousse-cote-verte.png" alt="">  
+              <img class="layer violet mousse vue1" src="@/assets/mousse-cote-violette.png" alt="">               
             </splide-slide>
             <splide-slide>
               <!-- image basket blanche dessus -->
               <img src="@/assets/dessus.png" alt="Modèle de chaussure vue de dessus" />
               <!-- Image avant chaussure vue 2 -->
-              <img class="layer bleu avant vue2" src="@/assets/cuir-av-bleu.png" alt="Avant bleu de la chaussure">
-              <img class="layer vert avant vue2" src="@/assets/cuir-av-vert.png" alt="Avant vert de la chaussure">    
-              <img class="layer violet avant vue2" src="@/assets/cuir-av-violet.png" alt="Avant violet de la chaussure">
-              <img class="layer bleu bande vue2" src="@/assets/bandes-dessus-bleues.png" alt="Bande bleu de la chaussure">    
-              <img class="layer vert bande vue2" src="@/assets/bandes-dessus-vertes.png" alt="Bande vert de la chaussure">    
-              <img class="layer violet bande vue2" src="@/assets/bandes-dessus-violettes.png" alt="Bande violet de la chaussure">               
+              <img class="layer bleu avant vue2" src="@/assets/cuir-av-bleu.png" alt="">
+              <img class="layer vert avant vue2" src="@/assets/cuir-av-vert.png" alt="">    
+              <img class="layer violet avant vue2" src="@/assets/cuir-av-violet.png" alt="">
+              <img class="layer bleu bande vue2" src="@/assets/bandes-dessus-bleues.png" alt="">    
+              <img class="layer vert bande vue2" src="@/assets/bandes-dessus-vertes.png" alt="">    
+              <img class="layer violet bande vue2" src="@/assets/bandes-dessus-violettes.png" alt=""> 
+              <img class="layer bleu mousse vue2" src="@/assets/mousse-dessus-bleu.png" alt="">
+              <img class="layer vert mousse vue2" src="@/assets/mousse-dessus-verte.png" alt=""> 
+              <img class="layer violet mousse vue2" src="@/assets/mousse-dessus-violette.png" alt="">                
+            </splide-slide>
+            <splide-slide>
+              <!-- image basket blanche deriere -->
+              <img src="@/assets/deriere.png" alt="" />
+              <!-- Image avant chaussure vue 3 -->
+              <img class="layer bleu mousse vue3" src="@/assets/mousse-arriere-bleu.png" alt="">
+              <img class="layer vert mousse vue3" src="@/assets/mousse-arriere-verte.png" alt=""> 
+              <img class="layer violet mousse vue3" src="@/assets/mousse-arriere-violette.png" alt="">                
             </splide-slide>
           </Splide>
         </div>
@@ -170,7 +184,7 @@ export default {
       parts:[
         "Avant",
         "Bande",
-        "Long",
+        "Mousse",
         "Large",
         "Grand",
         "Petit",
@@ -188,6 +202,7 @@ export default {
   mounted() {
     this.canvas = document.querySelector('#splide01-slide01')
     this.canvas2 = document.querySelector('#splide01-slide02')
+    this.canvas3 = document.querySelector('#splide01-slide03')
     this.clone = document.querySelector('.splide__slide--clone')
   },
   methods: {
@@ -341,6 +356,12 @@ export default {
               item.classList.remove("show");
             });
 
+            //Pour la slide 3
+            this.canvas3.querySelectorAll(`.${this.configuration.parts}`)
+            .forEach((item) => {
+              item.classList.remove("show");
+            });
+
           //Pour la slide 1
           this.canvas.querySelector(
               `.${this.configuration.color}.${this.configuration.parts}.vue1`
@@ -352,6 +373,15 @@ export default {
               `.${this.configuration.color}.${this.configuration.parts}.vue2`
             )
             .classList.add("show");
+
+          //Pour la slide 3
+            this.canvas3.querySelector(
+              `.${this.configuration.color}.${this.configuration.parts}.vue3`
+            )
+            .classList.add("show");
+
+            this.choix[this.configuration.parts] = this.configuration.color;
+            console.log(this.choix);
         },
         //Reset de la config chaussure
         reset() {
@@ -401,7 +431,7 @@ export default {
     display: block;
     margin: auto;
   }
-  .vue1, .vue2{
+  .vue1, .vue2, .vue3{
     display:none;
   }
   .show{
