@@ -1,7 +1,7 @@
 <template>
   <div class="container__personnalisation">
     <div @click="$router.go(-1)" class="buttonBack">
-      <svg  xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
     </div>
     <div class="c-chaussure__container">
       <div id="image-slider" class="splide">
@@ -9,42 +9,81 @@
           <Splide :options="options" >
             <splide-slide>
               <!-- image basket blanche côté -->
-              <img src="@/assets/cote.png" alt="" />   
+              <img src="@/assets/cote.png" alt="Modèle de chaussure vue de côté" />   
               <!-- Image avant chaussure vue 1 -->
-              <img class="layer bleu avant vue1" src="@/assets/cuir-bleu.png" alt="">
-              <img class="layer vert avant vue1" src="@/assets/cuir-vert.png" alt="">       
-              <img class="layer violet avant vue1" src="@/assets/cuir-violet.png" alt="">
-              <img class="layer bleu bande vue1" src="@/assets/bandes-cote-bleue.png" alt="">   
-              <img class="layer vert bande vue1" src="@/assets/bandes-cote-vertes.png" alt="">   
-              <img class="layer violet bande vue1" src="@/assets/bande-cote-violette.png" alt="">                 
+              <img class="layer bleu avant vue1" src="@/assets/cuir-bleu.png" alt="Avant bleu de la chaussure">
+              <img class="layer vert avant vue1" src="@/assets/cuir-vert.png" alt="Avant vert de la chaussure">       
+              <img class="layer violet avant vue1" src="@/assets/cuir-violet.png" alt="Avant violet de la chaussure">
+              <img class="layer bleu bande vue1" src="@/assets/bandes-cote-bleue.png" alt="Bande bleu de la chaussure">   
+              <img class="layer vert bande vue1" src="@/assets/bandes-cote-vertes.png" alt="Bande vert de la chaussure">   
+              <img class="layer violet bande vue1" src="@/assets/bande-cote-violette.png" alt="Bande violet de la chaussure">
             </splide-slide>
             <splide-slide>
               <!-- image basket blanche dessus -->
-              <img src="@/assets/dessus.png" alt="" />
+              <img src="@/assets/dessus.png" alt="Modèle de chaussure vue de dessus" />
               <!-- Image avant chaussure vue 2 -->
-              <img class="layer bleu avant vue2" src="@/assets/cuir-av-bleu.png" alt="">
-              <img class="layer vert avant vue2" src="@/assets/cuir-av-vert.png" alt="">    
-              <img class="layer violet avant vue2" src="@/assets/cuir-av-violet.png" alt="">
-              <img class="layer bleu bande vue2" src="@/assets/bandes-dessus-bleues.png" alt="">    
-              <img class="layer vert bande vue2" src="@/assets/bandes-dessus-vertes.png" alt="">    
-              <img class="layer violet bande vue2" src="@/assets/bandes-dessus-violettes.png" alt="">               
+              <img class="layer bleu avant vue2" src="@/assets/cuir-av-bleu.png" alt="Avant bleu de la chaussure">
+              <img class="layer vert avant vue2" src="@/assets/cuir-av-vert.png" alt="Avant vert de la chaussure">    
+              <img class="layer violet avant vue2" src="@/assets/cuir-av-violet.png" alt="Avant violet de la chaussure">
+              <img class="layer bleu bande vue2" src="@/assets/bandes-dessus-bleues.png" alt="Bande bleu de la chaussure">    
+              <img class="layer vert bande vue2" src="@/assets/bandes-dessus-vertes.png" alt="Bande vert de la chaussure">    
+              <img class="layer violet bande vue2" src="@/assets/bandes-dessus-violettes.png" alt="Bande violet de la chaussure">               
             </splide-slide>
           </Splide>
         </div>
       </div>
       <div class="c-chaussure__buttonContainer">
-        <div class="cont">
-          <button @click="saveShoeHandler" class="button">Terminé</button>
+        <div @click="showEnding()" class="cont">
+          <button class="button">Terminé</button>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-        <svg @click="showModal()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg></div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+          <svg v-if="user.displayName != null" @click="saveShoeHandler(); alertLike();" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+          <svg @click="showModal()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+        </div>   
     </div>
+    <Modal
+      v-show="isEndingVisible"
+      @closeEnd="closeEnd"
+    >
+      <template v-slot:header>
+      </template>
+
+      <template v-slot:body>
+        <p class="fontText">Votre précommande est enregistré!</p>
+      </template>
+
+      <template v-slot:footer>
+        <div>
+          Bien joué
+        </div>
+      </template>
+    </Modal>
     <Modal
       v-show="isModalVisible"
       @close="closeModal"
       @reset="reset"
     />
+    <Modal
+      v-show="isLikeVisible"
+      @closeLike="closeLike"
+    >
+      <template v-slot:header>
+        <div @click="close"></div>
+      </template>
+
+      <template v-slot:body>
+        <p class="fontText">Votre paire a bien été enregistré !</p>
+      </template>
+
+      <template v-slot:footer>
+        <div class="modalLink">
+          <router-link to="/mesCreations" class="fontLink">Voir mes créations</router-link>
+        </div>
+        <div @click="closeLike" class="modalLink">
+          Retour à la personnalisation
+        </div>
+      </template>
+    </Modal>
     <div class="c-indicatifTitre title -small">Semelles</div>
     <div class="c-listPersonnalisation">
       <div class="c-listPersonnalisation__menu">
@@ -68,8 +107,8 @@
       :key="index"
       @click="partsPicked(label); partsChecked();"
     >
-    <div class="color">
-      <div :class="`cercle${index + 1}`"></div>
+    <div class="partsContainer">
+      <div :class="`parts${index + 1}`"></div>
     </div>
       <p id="nom_etape">{{ label }}</p>
       
@@ -93,20 +132,24 @@ import domtoimage from "dom-to-image-more";
 import Modal from "@/components/Modal"
 
 export default {
+  computed:{
+    user(){
+      return this.$store.state.user
+    },
+  },
   components: {
     Modal,
   },
   data() {
     return {
+        isLikeVisible: false,
         isModalVisible: false,
+        isEndingVisible: false,
         shoeName: '',
         shoeCreated: false,
       options: {
         perPage: 1,
         type: 'loop',
-      },
-      props:{
-        isChecked: false,
       },
       configuration: {
         parts: null,
@@ -148,12 +191,24 @@ export default {
     this.clone = document.querySelector('.splide__slide--clone')
   },
   methods: {
+    alertLike(){
+      this.isLikeVisible = true;
+    },
     showModal() {
-        this.isModalVisible = true;
-      },
-      closeModal() {
-        this.isModalVisible = false;
-      },
+      this.isModalVisible = true;
+    },
+    showEnding(){
+      this.isEndingVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    closeLike(){
+      this.isLikeVisible = false;
+    },
+    closeEnd(){
+      this.isEndingVisible = false;
+    },
        saveShoeHandler() {
             // First, we need to get an image of the finalized shoe
             // When getScreenShot() has finished his job, sendImageToWPMediaLibrary() will be executed
@@ -235,16 +290,19 @@ export default {
           document.querySelector('.c-validation').classList.add('c-validation-show')
           document.querySelector('.c-listPersonnalisation').classList.add('c-listPersonnalisation-show')
           document.querySelector('.liste-couleurs').classList.add('liste-couleurs-show')
+          document.querySelector('.liste-parties').classList.add('hideParts')
         },
         checked(){
           document.querySelector('.liste-couleurs').classList.remove('liste-couleurs-show')
           document.querySelector('.c-listPersonnalisation').classList.remove('c-listPersonnalisation-show')
           document.querySelector('.c-validation').classList.remove('c-validation-show')
+          document.querySelector('.liste-parties').classList.remove('hideParts')
         },
         unchecked(){
           document.querySelector('.liste-couleurs').classList.remove('liste-couleurs-show')
           document.querySelector('.c-listPersonnalisation').classList.remove('c-listPersonnalisation-show')
           document.querySelector('.c-validation').classList.remove('c-validation-show')
+          document.querySelector('.liste-parties').classList.remove('hideParts')
 
           //Pour la slide 1
           this.canvas.querySelectorAll(`.${this.configuration.parts}`)
@@ -294,12 +352,10 @@ export default {
               `.${this.configuration.color}.${this.configuration.parts}.vue2`
             )
             .classList.add("show");
-
-            this.choix[this.configuration.parts] = this.configuration.color;
-            console.log(this.choix);
         },
         //Reset de la config chaussure
         reset() {
+          console.log('resetperso')
           this.canvas.querySelectorAll("img").forEach((item) => {
               item.classList.remove("show");
           });
@@ -312,6 +368,9 @@ export default {
 };
 </script>
 <style lang="scss">
+.hideParts{
+  display: none;
+}
 .container__personnalisation {
   height: 100vh;
   width: 100%;
@@ -321,6 +380,9 @@ export default {
   left: 0;
   z-index: 999;
   background-color: $black;
+  svg{
+    cursor: pointer;
+  }
 }
 .c-chaussure__container {
   display: flex;
@@ -508,6 +570,28 @@ export default {
   background-color: blue;
 }
 
+.parts1{
+  background: url("../assets/cote-cote.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100%;
+}
+.parts2{
+  background: url("../assets/bande-cote.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100%;
+}
+.parts3{
+  background: url("../assets/mousse-cote.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100%;
+}
+
 .c-listPersonnalisation::-webkit-scrollbar {
   width: 4px;
   @include large-down {
@@ -543,10 +627,18 @@ export default {
 .buttonBack {
   color: $white;
   position: absolute;
-  top: 25px;
-  left: 25px;
+  margin: 25px;
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
-
+.modalLink, .modalLink a{
+  font-size: 14px;
+  color: white;
+  font-family: $fontText;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline $primaryColor;
+  }
+}
 </style>

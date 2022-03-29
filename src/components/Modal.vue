@@ -2,19 +2,10 @@
   <transition name="modal-fade">
   <div class="modal-backdrop">
     <div class="modal">
-      <header class="modal-header">
-        <button
-          type="button"
-          class="btn-close"
-          @click="close"
-        >
-          x
-        </button>
-      </header>
 
       <section class="modal-body">
         <slot name="body">
-         <p class="fontText">Etes-vous sur de vouloir réinitiliser votre chaussure ?</p> 
+         <p class="fontText">Etes-vous sur de vouloir réinitialiser votre chaussure ?</p> 
         </slot>
        </section>
 
@@ -42,6 +33,12 @@
     methods: {
       close() {
         this.$emit('close');
+      },
+      closeLike() {
+        this.$emit('closeLike');
+      },
+      closeEnd() {
+        this.$emit('closeEnd');
       },
       reset() {
           this.$emit('reset')

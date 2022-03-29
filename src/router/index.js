@@ -10,6 +10,7 @@ import Precommande from '../views/Precommande.vue'
 import Contact from '../views/Contact.vue'
 import Compte from '../views/Compte.vue'
 import MentionsLegales from '../views/MentionsLegales.vue'
+import Concept from '../views/Concept.vue'
 import NotFound from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -72,6 +73,11 @@ const routes = [
     path: '/MesCreations',
     name: 'MesCreations',
     component: MesCreations
+  },
+  {
+    path: '/Concept',
+    name: 'Concept',
+    component: Concept
   },
   {
     path: '*',

@@ -35,7 +35,6 @@
                   <router-link to="/decouvrir" class="fontLink">Nous découvrir</router-link>
                   <router-link to="/personnalisation" class="fontLink">Personaliser</router-link>
                   <router-link to="/contact" class="fontLink">Contact</router-link>
-                  Bonjour {{user.displayName}}
                 </div>
               </div>
             </div>
