@@ -1,7 +1,6 @@
 <template>
-     <div class="container wrapper-container">
-    <div class="row">
-      <div class="col-l-3">
+     <div class="container  wrapper-container">
+    <div class="row row_card">
         <div class="c-card__container">
           <div class="c-card__innerContainer">
             <h3 class="title -small -colorWhite lineTitle -smallLine">{{data.acf.reassurance.reassurancecard[0].title}}</h3>
@@ -12,9 +11,7 @@
             </div>
             <p>{{data.acf.reassurance.reassurancecard[0].paragraph}}</p>
           </div>
-        </div>
       </div>
-      <div class="col-l-3">
         <div class="c-card__container">
           <div class="c-card__innerContainer">
             <h3 class="title -small -colorWhite lineTitle -smallLine">{{data.acf.reassurance.reassurancecard[1].title}}</h3>
@@ -27,9 +24,7 @@
             </div>
             <p>{{data.acf.reassurance.reassurancecard[1].paragraph}}</p>
           </div>
-        </div>
       </div>
-      <div class="col-l-3">
         <div class="c-card__container">
           <div class="c-card__innerContainer">
             <h3 class="title -small -colorWhite lineTitle -smallLine">{{data.acf.reassurance.reassurancecard[2].title}}</h3>
@@ -41,9 +36,7 @@
             </div>
             <p>{{data.acf.reassurance.reassurancecard[2].paragraph}}</p>
           </div>
-        </div>
       </div>
-      <div class="col-l-3">
         <div class="c-card__container">
           <div class="c-card__innerContainer">
             <h3 class="title -small -colorWhite lineTitle -smallLine">{{data.acf.reassurance.reassurancecard[3].title}}</h3>
@@ -59,7 +52,6 @@
             <p>{{data.acf.reassurance.reassurancecard[3].paragraph}}</p>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </template>
@@ -100,6 +92,11 @@ export default {
 </script>
 
 <style lang="scss">
+.row_card{
+  flex: wrap;
+  align-items: center;
+  justify-content: center;
+}
 .c-card__container{
     background-color: $grey;
     border-radius: 22px;
@@ -110,6 +107,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 25px;
     .c-card__innerContainer {
         text-align: center;
     }
