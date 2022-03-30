@@ -2,7 +2,6 @@
     <header>
       <nav class="navbar">
         <div class="row rowNav">
-          <div class="col-l-2">
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__logo">
@@ -25,10 +24,8 @@
                   </svg>
                   </router-link>
                 </div>
-              </div>
             </div>
           </div>
-          <div class="col-l-6">
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__link">
@@ -36,10 +33,8 @@
                   <router-link to="/personnalisation" class="fontLink">Personaliser</router-link>
                   <router-link to="/contact" class="fontLink">Contact</router-link>
                 </div>
-              </div>
             </div>
           </div>
-          <div class="col-l-4">
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__log">
@@ -52,7 +47,6 @@
                   </svg></router-link>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </nav>
@@ -135,21 +129,31 @@ link.addEventListener('click', function(e) {
 <style lang="scss">
 .rowNav {
   background: #1f1f1f77;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar{
+  padding-top: 20px;
 }
 
 .c-header__container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 20px;
   .c-header__innerContainer {
     .e-header__log {
       display: flex;
       align-items: center;
+      padding-right: 20px;
       svg {
         margin: 10px;
         width: 25px;
         color: white;
         animation: none;
+        &:hover{
+          color: $primaryColor;
+        }
       }
     }
     .e-header__logo {
@@ -163,6 +167,10 @@ link.addEventListener('click', function(e) {
       align-items: center;
       a {
         margin: 20px;
+        transition: 0.25s all ease-in-out;
+        &:hover{
+          text-decoration: underline $primaryColor;
+        }
       }
     }
   }
