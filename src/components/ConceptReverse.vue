@@ -3,7 +3,7 @@
     <div class="row -vcenter imageTexte">
       <div class="col-l-7">
         <div class="c-image__container">
-          <img src="img/m22_home_concept.png" alt="" />
+          <img src="img/m22_home_concept.png" alt="Visuel de la chaussure M-22" />
         </div>
       </div>
       <div class="col-l-5">

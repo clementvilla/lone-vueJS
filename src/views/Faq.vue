@@ -42,23 +42,23 @@ export default {
       },
       myItems: [
           {
-            title: 'How many time zones are there in all?',
-            value: 'Given a 24-hour day and 360 degrees of longitude around the Earth'
+            title: 'Combien de temps de livraison pour ma paire personnalisée ?',
+            value: 'Le temps de fabrication de votre paire peut varier selon les couleurs et parties choisies. Cependant, nous mettons un point d honneur à vous faire livrer votre colis sous 10 jours'
           },
           {
-            title: 'How many time zones are there in all?',
-            value: 'Given a 24-hour day and 360 degrees of longitude around the Earth'
+            title: "D'où viennent les matérieux utilisés par la M-22?",
+            value: "Nous priorisons la qualité à moindre coût chez Lone, c'est pourquoi nos matérieux proviennet de differentes contrés. Le coton que nous utilisons provient d’Inde et des États-Unis d’où nous importons du fil écru "
           },
           {
-            title: 'How many time zones are there in all?',
-            value: 'Given a 24-hour day and 360 degrees of longitude around the Earth'
+            title: "Y'aura t il de nouvelle paire avec un style différent?",
+            value: 'Oui, très bientôt'
           },
           {
-            title: 'How many time zones are there in all?',
-            value: 'Given a 24-hour day and 360 degrees of longitude around the Earth'
+            title: "J'ai  un problème de livraison que faire ?",
+            value: 'Contactez nous par mail : lone@gmail.com'
           },
           {
-            title: 'How long is a day and year on Venus?',
+            title: "Comment vous est venu l'idée pour vore marque?",
             value: 'Venus takes 224.7 Earth days to complete one orbit around the Sun.'
           }
         ]
