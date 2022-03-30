@@ -103,19 +103,33 @@
         </div>
         <div class="col-md-4">
           <h3 class="fontFooter -footerTitle">Aide</h3>
-          <ul class="fontFooter">
-            <li><a href="">Expédition et livraison</a></li>
-            <li><a href="">SAV</a></li>
-            <li><a href="">Mode de paiement</a></li>
-            <li><a href="">Nous contacter</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul>
+            <ul class="fontFooter">
+              <li>
+                <router-link to="/faq" class="fontLink"><a><p class="fontFooter">Expédition et livraison</p></a></router-link>
+              </li>
+              <li>
+                <router-link to="/faq" class="fontLink"><a><p class="fontFooter">SAV</p></a></router-link>              
+              </li>
+              <li>
+                <router-link to="/faq" class="fontLink"><a><p class="fontFooter">Mode de paiement</p></a></router-link>
+              </li>
+              <li>
+                <router-link to="/contact" class="fontLink"><a><p class="fontFooter">Nous contacter</p></a></router-link>  
+              </li>
+              <li>
+                <router-link to="/faq" class="fontLink"><a><p class="fontFooter">FAQ</p></a></router-link>  
+              </li>
+            </ul>          
         </div>
         <div class="col-md-4">
           <h3 class="fontFooter -footerTitle">A propos</h3>
           <ul class="fontFooter">
-            <li><a href="/concept">Le concept</a></li>
-            <li><a href="/concept">L'histoire</a></li>
+            <li>
+              <router-link to="/concept" class="fontLink"><a><p class="fontFooter">Le concept</p></a></router-link>  
+            </li>
+            <li>
+              <router-link to="/concept" class="fontLink"><a><p class="fontFooter">L'histoire</p></a></router-link>  
+            </li>
           </ul>
         </div>
         <div class="col-md-4">
@@ -136,11 +150,11 @@
       <div>
         <p class="fontFooter -fontCGU">
           <ul>
-            <li><a href="">Conditions d'utilisation</a></li>
-            <li><a href="/">Conditions générales de vente</a></li>
-            <li><a href="/mentions">Mentions légales</a></li>
-            <li><a href="">Politique en matières de confidentitalités de cookies</a></li>
-            <li><a href="">Paramètres des cookies</a></li>
+            <li><a href="/mentionsLegales">Conditions d'utilisation</a></li>
+            <li><a href="/mentionsLegales">Conditions générales de vente</a></li>
+            <li><a href="/mentionsLegales">Mentions légales</a></li>
+            <li><a href="/mentionsLegales">Politique en matières de confidentitalités de cookies</a></li>
+            <li><a href="/mentionsLegales">Paramètres des cookies</a></li>
           </ul>
         </p>
       </div>

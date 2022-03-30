@@ -14,9 +14,9 @@
             <p>{{data.acf.sectionimgtext_1.paragraph_2}}</p>
             <p>{{data.acf.sectionimgtext_1.paragraph_3}}</p>
           </div>
-          <div class="cont">
-            <a href="#" class="button">Découvrir</a>
-          </div>
+          <router-link to="/concept" class="fontLink"><div class="cont">
+            <a class="button">Découvrir</a></div></router-link>
+
         </div>
       </div>
     </div>

@@ -23,9 +23,8 @@
               paire. La M-22 n’attend plus que toi !
             </p>
           </div>
-          <div class="cont">
-            <a href="concept.html" class="button">Découvrir</a>
-          </div>
+          <router-link to="/concept" class="fontLink"><div class="cont">
+            <a class="button">Découvrir</a></div></router-link>
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@
             </p>
           </div>
           <div class="cont">
-            <a href="concept.html" class="button">Découvrir</a>
+            <router-link to="/personnalisation" class="fontLink"><div class="cont"><a class="button">Personnalise</a></div></router-link>
           </div>
         </div>
       </div>

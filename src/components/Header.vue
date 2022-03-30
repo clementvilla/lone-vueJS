@@ -33,7 +33,7 @@
               <div class="c-header__innerContainer">
                 <div class="e-header__link">
                   <router-link to="/concept" class="fontLink">Nous découvrir</router-link>
-                  <router-link to="/personnalisation" class="fontLink">Personaliser</router-link>
+                  <router-link to="/personnalisation" class="fontLink">Personnaliser</router-link>
                   <router-link to="/contact" class="fontLink">Contact</router-link>
                 </div>
               </div>
@@ -88,7 +88,7 @@
           </div>
           <ul class="list_menu_mobile">
             <li><router-link to="/decouvrir" class="fontLink">Nous découvrir</router-link></li>
-            <li><router-link to="/personnalisation" class="fontLink">Personaliser</router-link></li>
+            <li><router-link to="/personnalisation" class="fontLink">Personnaliser</router-link></li>
             <li><router-link to="/contact" class="fontLink">Contact</router-link></li>
             <li v-if="user.displayName == null"><router-link  to="/login" class="fontLink">Mon compte</router-link></li>
             <li v-if="user.displayName != null"><router-link  to="/Compte" class="fontLink">Mon compte</router-link></li>

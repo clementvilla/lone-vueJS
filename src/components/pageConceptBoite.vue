@@ -20,9 +20,6 @@
               {{data.acf.sectionimgtext_3.paragraph_3}}
             </p>
           </div>
-          <div class="cont">
-            <a href="concept.html" class="button">Découvrir</a>
-          </div>
         </div>
       </div>
     </div>

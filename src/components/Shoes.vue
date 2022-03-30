@@ -11,9 +11,9 @@
             </p>
             <h1 class="title -colorWhite -alignLeft">{{data.acf.firstview.titlemidwhite}}</h1>
             <p>{{data.acf.firstview.paragraph}}</p>
-            <div class="cont">
-            <a href="#" class="button">Personnaliser</a>
-            </div>
+            <router-link to="/personnalisation" class="fontLink"><div class="cont">
+            <a class="button">Personnaliser</a></div></router-link>
+            
         </div>
         </div>
     </div>

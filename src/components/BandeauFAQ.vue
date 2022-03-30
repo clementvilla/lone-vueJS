@@ -10,7 +10,7 @@
         {{data.acf.bandeauFAQ.paragraph}}
       </p>
       <div class="cont -backgroundBlack">
-        <router-link to="/personnalisation" class="button -backgroundBlack">Personnalise</router-link> 
+        <router-link to="/faq" class="button -backgroundBlack">La FAQ</router-link> 
       </div>
     </div>
   </div>
