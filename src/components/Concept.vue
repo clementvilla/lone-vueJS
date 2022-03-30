@@ -3,15 +3,15 @@
     <div class="row -vcenter">
       <div class="col-l-7">
         <div class="c-image__container">
-          <img src="img/m22_home_concept.png" alt="" />
+          <img :src="data.acf.sectionimgtext.img.url" alt="Chaussure M-22 de la marque Lone" />
         </div>
       </div>
       <div class="col-l-5">
         <div class="c-text__container">
-          <h2 class="title lineTitle -alignLeft">{{ title }}</h2>
+          <h2 class="title lineTitle -alignLeft">{{data.acf.sectionimgtext.titlemidgreen}}</h2>
           <div class="c-text__innerContainer">
             <p>
-              {{ paragraphe }}
+              {{data.acf.sectionimgtext.paragraph}}
             </p>
           </div>
           <div class="cont">
@@ -24,13 +24,37 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: 'Concept',
-  props: {
-    title: String,
-    paragraphe: String,
+
+  data() {
+    return {
+      data: {
+        acf:{
+          sectionimgtext:{
+            titlemidgreen:'',
+            paragraph:'',
+            img:'',
+            buttonwhite:''
+          }
+        }
+      },
+    };
   },
-}
+  created() {
+    axios
+      .get("https://lone.ambregeiss.fr/wp-json/wp/v2/pages/28872")
+      .then(
+        function (response) {
+          this.data = response.data;
+          console.log("response.data")
+        }.bind(this)
+      )
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+};
 </script>
 
 <style lang="scss">

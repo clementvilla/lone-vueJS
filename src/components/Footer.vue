@@ -2,7 +2,7 @@
   <footer>
     <div class="c-footer__container">
       <div class="row -center">
-        <div class="col-4">
+        <div class="col-12">
           <svg
             class="logoFooter"
             xmlns="http://www.w3.org/2000/svg"
@@ -101,31 +101,27 @@
             </svg>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-md-4">
           <h3 class="fontFooter -footerTitle">Aide</h3>
           <ul class="fontFooter">
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
+            <li><a href="">Expédition et livraison</a></li>
+            <li><a href="">SAV</a></li>
+            <li><a href="">Mode de paiement</a></li>
+            <li><a href="">Nous contacter</a></li>
+            <li><a href="">FAQ</a></li>
           </ul>
         </div>
-        <div class="col-2">
-          <h3 class="fontFooter -footerTitle">a propos de</h3>
+        <div class="col-md-4">
+          <h3 class="fontFooter -footerTitle">A propos</h3>
           <ul class="fontFooter">
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
-            <li><a href="">texte</a></li>
+            <li><a href="">Le concept</a></li>
+            <li><a href="">L'histoire</a></li>
           </ul>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
           <h3 class="fontFooter -footerTitle">personnalisés</h3>
           <p class="fontFooter">
-            Choisis ton modèle préféré et crées-en une paire unique avec notre
-            outli de personnalisation.
+            Crée une paire unique et qui te correspond avec notre outli de personnalisation.
           </p>
         </div>
       </div>
@@ -139,13 +135,13 @@
       </div>
       <div>
         <p class="fontFooter -fontCGU">
-          <a href="">Conditions d'utilisation</a> |
-          <a href="">Conditions générales de vente</a> |
-          <a href="">Mentions légales</a>
-        </p>
-        <p class="fontFooter -fontCGU">
-          <a href="">Politique en matières de confidentitalités de cookies</a> |
-          <a href="">Paramètres des cookies</a>
+          <ul>
+            <li><a href="">Conditions d'utilisation</a></li>
+            <li><a href="">Conditions générales de vente</a></li>
+            <li><a href="">Mentions légales</a></li>
+            <li><a href="">Politique en matières de confidentitalités de cookies</a></li>
+            <li><a href="">Paramètres des cookies</a></li>
+          </ul>
         </p>
       </div>
     </div>
@@ -227,9 +223,36 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
+  align-items: center;
   background-color: $black;
   p {
     margin: 0;
+  }
+}
+
+@media screen and (max-width: $small) {
+
+
+
+
+
+}
+
+@media screen and (max-width: $medium) {
+    .c-footer__container {
+    .row.-center {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+    .c-footer__containerCGU {
+    flex-direction: column;
+    align-items: flex-start !important;;
+    justify-content: flex-start !important;
+  }
+  .fontFooter.-fontCGU {
+    padding: 0 32px !important;
   }
 }
 </style>

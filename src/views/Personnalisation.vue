@@ -139,6 +139,8 @@
     </div>
   </div>
 </template>
+
+
 <script>
 import axios from "axios";
 import domtoimage from "dom-to-image-more";
@@ -394,6 +396,12 @@ export default {
   },
 };
 </script>
+
+
+
+
+
+
 <style lang="scss">
 .liste-parties{
   @include large-down {

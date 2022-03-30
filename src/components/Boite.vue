@@ -3,16 +3,14 @@
     <div class="row -vcenter -reverse">
       <div class="col-l-7">
         <div class="c-image__container">
-          <img src="img/boiteLogo.png" alt="">
+          <img :src="data.acf.sectionimgtext_1.image.url" alt="Boite de la chaussure M-22 de la marque Lone">
         </div>
       </div>
       <div class="col-l-5">
         <div class="c-text__container">
-          <h2 class="title lineTitle -alignLeft">la boite</h2>
+          <h2 class="title lineTitle -alignLeft">{{data.acf.sectionimgtext_1.titlemidgreen}}</h2>
           <div class="c-text__innerContainer">
-            <p>Pour nous la boite est aussi importante que les sneakers. Alors quoi de meiux qu’une une boite accordée à
-              ta paire ?</p>
-            <p>Nous créons pour chaque collection, une boite unique.</p>
+            <p>{{data.acf.sectionimgtext_1.paragraph}}</p>
           </div>
           <div class="cont">
             <a href="#" class="button">Découvrir</a>
@@ -24,9 +22,47 @@
 </template>
 
 <script>
+import axios from "axios";
+export default {
 
+  data() {
+    return {
+      data: {
+        acf:{
+          sectionimgtext_1:{
+            titlemidgreen:'',
+            paragraph:'',
+            image:'',
+            buttonwhite:''
+          }
+        }
+      },
+    };
+  },
+  created() {
+    axios
+      .get("https://lone.ambregeiss.fr/wp-json/wp/v2/pages/28872")
+      .then(
+        function (response) {
+          this.data = response.data;
+          console.log("response.data")
+        }.bind(this)
+      )
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+};
 </script>
 
 <style lang="scss">
+  @media screen and (max-width: $large) {
+    .row {
+      justify-content: center;
+    }
+  }
 
+  .row.-vcenter.-reverse {
+    flex-wrap: wrap-reverse;
+  }
 </style>

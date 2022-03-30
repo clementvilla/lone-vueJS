@@ -28,21 +28,23 @@
               </div>
             </div>
           </div>
-          <div class="col-l-8">
+          <div class="col-l-6">
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__link">
                   <router-link to="/decouvrir" class="fontLink">Nous découvrir</router-link>
                   <router-link to="/personnalisation" class="fontLink">Personaliser</router-link>
                   <router-link to="/contact" class="fontLink">Contact</router-link>
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-l-2">
+          <div class="col-l-4">
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__log">
+                  <p>Bonjour {{user.displayName}}</p>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <svg v-if="user.displayName != null" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -54,6 +56,14 @@
             </div>
           </div>
         </div>
+        <!--div class="row rowNavMobile">
+          <a id="link" href="#"><span id="burger"></span></a>
+          <ul class="list-unstyled">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Formation</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div-->
       </nav>
     </header>
 </template>
@@ -67,7 +77,20 @@ export default {
     },
   }
 };
+/* Sélection des éléments HTML *
+let link = document.getElementById('link')
+let burger = document.getElementById('burger')
+let ul = document.querySelector('ul')
+
+/* gestionnaire d'événement sur le a#link pour venir changer l'attribution de la classe .open à la ul et au span#burger 
+link.addEventListener('click', function(e) {
+  e.preventDefault()
+  burger.classList.toggle('open')
+  ul.classList.toggle('open')
+})*/
+
 </script>
+
 
 
 <style lang="scss">
@@ -110,6 +133,44 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/*Menu burger*/
+
+#burger {
+  width:30px;
+  height:2px;
+  background:white;
+  display:inline-block;
+  position:relative;
+  ::before, ::after {
+    content:'';
+    width:30px;
+    height:2px;
+    background:white;
+    display:inline-block;
+    position:absolute;
+    transform-origin: center;
+    transition: all 0.3s ease;
+  }
+  ::before {
+    top:-7px;
+  }
+  ::after {
+    top:7px;
+  }
+  .open {
+    background:transparent;  la barre du milieu disparait 
+    ::before {
+      transform: rotate(45deg); 
+      top:0;
+    }
+    ::after {
+      transform: rotate(-45deg);
+      top:0;
+    }
+  }
 }
 
 </style>
