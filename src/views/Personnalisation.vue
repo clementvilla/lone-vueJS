@@ -435,15 +435,19 @@ export default {
   justify-content: space-evenly;
   height: 100%;
   width: 75%;
-  @include large-down {
-    width: 100%;
-    height: 60%;
-  }
   img {
     width: 75%;
     display: block;
     margin: auto;
   }
+  @include large-down {
+    width: 100%;
+    height: 60%;
+    img{
+      width: 65%;
+    }
+  }
+  
   .vue1, .vue2, .vue3{
     display:none;
   }
@@ -496,7 +500,7 @@ export default {
     left: 0;
     width: 100%;
     height: 25%;
-    bottom: 140px;
+    bottom: 80px;
     top: initial;
     overflow-y: hidden;
     overflow-x: scroll;
