@@ -1,6 +1,6 @@
 <template>
   <div class="container wrapper-container">
-    <div class="row -vcenter">
+    <div class="row -vcenter imageTexte">
       <div class="col-l-7">
         <div class="c-image__container">
           <img src="img/m22_home_concept.png" alt="" />
@@ -8,10 +8,19 @@
       </div>
       <div class="col-l-5">
         <div class="c-text__container">
-          <h2 class="title lineTitle -alignLeft">{{ title }}</h2>
+          <h2 class="title lineTitle -alignLeft">le concept</h2>
           <div class="c-text__innerContainer">
             <p>
-              {{ paragraphe }}
+              Notre Concept ? Des sneakers personnalisés pour te démarquer !
+            </p>
+            <p>
+              Lone te propose de composer une paire de sneakers qui
+              t’appartient. Laisse parler ton style et imagine une paire qui te
+              ressemble. Précommande ta compo et reçoit la le 8 juin 2022.
+            </p>
+            <p>
+              Chaque combinaison est unique, dépêche toi de personnaliser ta
+              paire. La M-22 n’attend plus que toi !
             </p>
           </div>
           <div class="cont">
@@ -24,13 +33,7 @@
 </template>
 
 <script>
-export default {
-  name: 'Concept',
-  props: {
-    title: String,
-    paragraphe: String,
-  },
-}
+
 </script>
 
 <style lang="scss">
@@ -42,6 +45,10 @@ export default {
   img {
     width: 100%;
   }
+}
+
+.imageTexte{
+    flex-direction: row-reverse;
 }
 
 .c-text__container {
