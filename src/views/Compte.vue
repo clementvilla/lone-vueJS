@@ -33,13 +33,5 @@ export default {
         console.log(error);
       });
   },
-  methods: {
-    logout(state){
-      state.user = {
-        userId: -1,
-        authToken: '',
-      }
-    },
-  },
 };
 </script>
