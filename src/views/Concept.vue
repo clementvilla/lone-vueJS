@@ -1,20 +1,17 @@
 <template>
     <div class="concept">
-        <Concept 
-            v-bind:title=data.acf.sectionimgtext_1.titlemidgreen 
-            v-bind:paragraphe=data.acf.sectionimgtext_1.paragraph
-        />
-        <ConceptReverse />
-        <Concept 
-            v-bind:title=data.acf.sectionimgtext_3.titlemidgreen 
-            v-bind:paragraphe=data.acf.sectionimgtext_3.paragraph
-        />
+        <pageConceptIntro />
+        <pageConceptConcept />
+        <pageConceptMateriaux />
+        <pageConceptBoite />
     </div>
 </template>
 <script>
 import axios from "axios";
-import Concept from "@/components/Concept";
-import ConceptReverse from "@/components/ConceptReverse";
+import pageConceptConcept from "@/components/pageConceptConcept";
+import pageConceptBoite from "@/components/pageConceptBoite";
+import pageConceptMateriaux from "@/components/pageConceptMateriaux";
+import pageConceptIntro from "@/components/pageConceptIntro";
 export default {
     data() {
     return {
@@ -26,8 +23,10 @@ export default {
     };
   },
     components: {
-      Concept,
-      ConceptReverse,
+      pageConceptConcept,
+      pageConceptMateriaux,
+      pageConceptBoite,
+      pageConceptIntro
     },
     created() {
     axios
@@ -47,3 +46,4 @@ export default {
 <style lang="scss">
 
 </style>
+
