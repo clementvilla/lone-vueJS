@@ -32,7 +32,7 @@
         </div>
 
           <div class="cont">
-          <a class="button"><input type="submit" value="">S'inscrire</a>
+          <input type="submit" value="Se connecter" class="button">
         </div>
       </form>
     </div>

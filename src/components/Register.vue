@@ -60,7 +60,7 @@
         </div>
 
         <div class="cont">
-          <a type="submit" class="button">S'inscrire</a>
+          <input type="submit" value="S'inscrire" class="button">
         </div>
       </form>
     </div>

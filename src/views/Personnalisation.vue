@@ -375,6 +375,8 @@ export default {
 
           //Défini l'élément sélectionné
           this.configuration.parts = label.toLowerCase()
+          console.log("la partie est sélectionné" + this.configuration.parts)
+
         },
         //Application du choix de la couleur
         colorPicked(event, label) {
