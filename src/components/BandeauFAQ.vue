@@ -67,7 +67,7 @@ export default {
   }
   .c-bandeauFaq__containerTitle {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
   .c-bandeauFaq__containerTextBtn {
     display: flex;

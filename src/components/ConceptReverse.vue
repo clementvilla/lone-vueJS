@@ -54,7 +54,7 @@
 .c-text__container {
   height: 100%;
   .c-text__innerContainer {
-    margin: 100px 0;
+    margin: 50px 0;
   }
 }
 </style>
