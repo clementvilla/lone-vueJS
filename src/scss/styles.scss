@@ -138,3 +138,12 @@
 p{
   font-size: 18px;
 }
+
+.c-image__container {
+  height: auto;
+}
+
+@media screen and (max-width: $medium) {
+  .wrapper-container{padding: 0px 50px;}
+  .c-text__innerContainer{margin: 30px 0 !important;}
+}

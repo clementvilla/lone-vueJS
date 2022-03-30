@@ -104,7 +104,7 @@
     <Card />
     <LookBook />
 
-  </div>
+  </div> 
 </template>
 
 <script>

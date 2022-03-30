@@ -51,7 +51,6 @@ export default {
 <style lang="scss">
 .c-bandeauFaq {
   padding: 120px 100px;
-  height: 470px;
   background-color: $primaryColor;
   width: 100%;
   h2 {
@@ -73,7 +72,22 @@ export default {
   .c-bandeauFaq__containerTextBtn {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: $large) {
+    .c-bandeauFaq__containerTitle {
+    text-align: center;
+    margin-bottom: 30px !important;
+  } 
+  p {
+    margin: 0 0 30px 0 !important;
+    width: 100% !important;
+  }
+  .c-bandeauFaq .c-bandeauFaq__containerTextBtn {
+    justify-content: center;
   }
 }
 </style>

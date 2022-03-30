@@ -87,6 +87,8 @@
     </div>
   </div>
 </template>
+
+
 <script>
 import axios from "axios";
 import domtoimage from "dom-to-image-more";
@@ -311,6 +313,12 @@ export default {
   },
 };
 </script>
+
+
+
+
+
+
 <style lang="scss">
 .container__personnalisation {
   height: 100vh;
@@ -547,6 +555,18 @@ export default {
   left: 25px;
   width: 32px;
   height: 32px;
+}
+
+@media screen and (max-width: $large) {
+  .c-chaussure__container {
+    width: 100%;
+    height: 75%;
+  }
+  .c-listPersonnalisation {
+    height: 20%;
+    top: auto !important;
+    bottom: 80px;
+  }
 }
 
 </style>
