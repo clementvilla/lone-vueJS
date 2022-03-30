@@ -22,6 +22,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/concept',
+    name: 'Concept',
+    component: Concept
+  },
+  {
     path: '/register',
     name: 'Register',
     component: Register

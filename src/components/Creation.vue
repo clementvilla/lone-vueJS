@@ -7,7 +7,7 @@
     >
       <div class="row -noGutter -vcenter">
         <div class="col-xl-6 col-l-12 col-md-6 col-12">
-          <img :src="chaussure.acf.img_url" alt="" />
+          <img :src="chaussure.acf.img_url" alt="Chaussure vierge" />
         </div>
         <div class="col-xl-6 col-l-12 col-md-6 col-12">
           <div class="c-creation">

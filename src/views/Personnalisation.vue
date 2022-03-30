@@ -11,29 +11,29 @@
               <!-- image basket blanche côté -->
               <img src="@/assets/cote.png" alt="Modèle de chaussure vue de côté" />   
               <!-- Image avant chaussure vue 1 -->
-              <img class="layer bleu avant vue1" src="@/assets/cuir-bleu.png" alt="">
-              <img class="layer vert avant vue1" src="@/assets/cuir-vert.png" alt="">       
-              <img class="layer violet avant vue1" src="@/assets/cuir-violet.png" alt="">
-              <img class="layer bleu bande vue1" src="@/assets/bandes-cote-bleue.png" alt="">   
-              <img class="layer vert bande vue1" src="@/assets/bandes-cote-vertes.png" alt="">   
-              <img class="layer violet bande vue1" src="@/assets/bande-cote-violette.png" alt="">
-              <img class="layer bleu mousse vue1" src="@/assets/mousse-cote-bleu.png" alt="">   
-              <img class="layer vert mousse vue1" src="@/assets/mousse-cote-verte.png" alt="">  
-              <img class="layer violet mousse vue1" src="@/assets/mousse-cote-violette.png" alt="">               
+              <img class="layer bleu avant vue1" src="@/assets/cuir-bleu.png" alt="vue1 avant bleu">
+              <img class="layer vert avant vue1" src="@/assets/cuir-vert.png" alt="vue1 avant  vert">       
+              <img class="layer violet avant vue1" src="@/assets/cuir-violet.png" alt="vue1 avant violet">
+              <img class="layer bleu bande vue1" src="@/assets/bandes-cote-bleue.png" alt="vue1 bande bleu">   
+              <img class="layer vert bande vue1" src="@/assets/bandes-cote-vertes.png" alt="vue1 bande vert">   
+              <img class="layer violet bande vue1" src="@/assets/bande-cote-violette.png" alt="vue1 bande violet">
+              <img class="layer bleu mousse vue1" src="@/assets/mousse-cote-bleu.png" alt="vue1 mousse bleu">   
+              <img class="layer vert mousse vue1" src="@/assets/mousse-cote-verte.png" alt="vue1 mousse vert">  
+              <img class="layer violet mousse vue1" src="@/assets/mousse-cote-violette.png" alt="vue1 mousse violet">               
             </splide-slide>
             <splide-slide>
               <!-- image basket blanche dessus -->
               <img src="@/assets/dessus.png" alt="Modèle de chaussure vue de dessus" />
               <!-- Image avant chaussure vue 2 -->
-              <img class="layer bleu avant vue2" src="@/assets/cuir-av-bleu.png" alt="">
-              <img class="layer vert avant vue2" src="@/assets/cuir-av-vert.png" alt="">    
-              <img class="layer violet avant vue2" src="@/assets/cuir-av-violet.png" alt="">
-              <img class="layer bleu bande vue2" src="@/assets/bandes-dessus-bleues.png" alt="">    
-              <img class="layer vert bande vue2" src="@/assets/bandes-dessus-vertes.png" alt="">    
-              <img class="layer violet bande vue2" src="@/assets/bandes-dessus-violettes.png" alt=""> 
-              <img class="layer bleu mousse vue2" src="@/assets/mousse-dessus-bleu.png" alt="">
-              <img class="layer vert mousse vue2" src="@/assets/mousse-dessus-verte.png" alt=""> 
-              <img class="layer violet mousse vue2" src="@/assets/mousse-dessus-violette.png" alt="">                
+              <img class="layer bleu avant vue2" src="@/assets/cuir-av-bleu.png" alt="vue2 avant bleu">
+              <img class="layer vert avant vue2" src="@/assets/cuir-av-vert.png" alt="vue2 avant vert">    
+              <img class="layer violet avant vue2" src="@/assets/cuir-av-violet.png" alt="vue2 avant violet">
+              <img class="layer bleu bande vue2" src="@/assets/bandes-dessus-bleues.png" alt="vue2 bande bleu">    
+              <img class="layer vert bande vue2" src="@/assets/bandes-dessus-vertes.png" alt="vue2 bande vert">    
+              <img class="layer violet bande vue2" src="@/assets/bandes-dessus-violettes.png" alt="vue2 bande violet"> 
+              <img class="layer bleu mousse vue2" src="@/assets/mousse-dessus-bleu.png" alt="vue2 mousse bleu">
+              <img class="layer vert mousse vue2" src="@/assets/mousse-dessus-verte.png" alt="vue2 mousse vert"> 
+              <img class="layer violet mousse vue2" src="@/assets/mousse-dessus-violette.png" alt="vue2 mousse violet">                
             </splide-slide>
             <splide-slide>
               <!-- image basket blanche deriere -->

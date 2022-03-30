@@ -32,7 +32,7 @@
             <div class="c-header__container">
               <div class="c-header__innerContainer">
                 <div class="e-header__link">
-                  <router-link to="/decouvrir" class="fontLink">Nous découvrir</router-link>
+                  <router-link to="/concept" class="fontLink">Nous découvrir</router-link>
                   <router-link to="/personnalisation" class="fontLink">Personaliser</router-link>
                   <router-link to="/contact" class="fontLink">Contact</router-link>
                 </div>

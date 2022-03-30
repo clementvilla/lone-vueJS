@@ -2,7 +2,7 @@
   <div class="page">
     <h1 class="title -big -textCenter" v-html="data.title.rendered"></h1>
     <div class="row -center">
-      <div class="col-12">
+      <div class="col-l-8">
         <p>
           Une question ? La réponse se trouve peut-être déjà dans la FAQ, vas y
           jeter un oeil ! Sinon nous restons disponible. Remplis le formulaire

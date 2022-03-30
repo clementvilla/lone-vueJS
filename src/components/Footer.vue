@@ -108,14 +108,14 @@
             <li><a href="">SAV</a></li>
             <li><a href="">Mode de paiement</a></li>
             <li><a href="">Nous contacter</a></li>
-            <li><a href="">FAQ</a></li>
+            <li><a href="/faq">FAQ</a></li>
           </ul>
         </div>
         <div class="col-md-4">
           <h3 class="fontFooter -footerTitle">A propos</h3>
           <ul class="fontFooter">
-            <li><a href="">Le concept</a></li>
-            <li><a href="">L'histoire</a></li>
+            <li><a href="/concept">Le concept</a></li>
+            <li><a href="/concept">L'histoire</a></li>
           </ul>
         </div>
         <div class="col-md-4">
@@ -137,8 +137,8 @@
         <p class="fontFooter -fontCGU">
           <ul>
             <li><a href="">Conditions d'utilisation</a></li>
-            <li><a href="">Conditions générales de vente</a></li>
-            <li><a href="">Mentions légales</a></li>
+            <li><a href="/">Conditions générales de vente</a></li>
+            <li><a href="/mentions">Mentions légales</a></li>
             <li><a href="">Politique en matières de confidentitalités de cookies</a></li>
             <li><a href="">Paramètres des cookies</a></li>
           </ul>

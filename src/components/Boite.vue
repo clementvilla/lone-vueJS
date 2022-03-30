@@ -11,6 +11,8 @@
           <h2 class="title lineTitle -alignLeft">{{data.acf.sectionimgtext_1.titlemidgreen}}</h2>
           <div class="c-text__innerContainer">
             <p>{{data.acf.sectionimgtext_1.paragraph}}</p>
+            <p>{{data.acf.sectionimgtext_1.paragraph_2}}</p>
+            <p>{{data.acf.sectionimgtext_1.paragraph_3}}</p>
           </div>
           <div class="cont">
             <a href="#" class="button">Découvrir</a>
@@ -32,6 +34,8 @@ export default {
           sectionimgtext_1:{
             titlemidgreen:'',
             paragraph:'',
+            paragraph_2:'',
+            paragraph_3:'',
             image:'',
             buttonwhite:''
           }
@@ -60,6 +64,10 @@ export default {
     .row {
       justify-content: center;
     }
+  }
+
+  .c-image__container {
+    height: auto !important;
   }
 
   .row.-vcenter.-reverse {

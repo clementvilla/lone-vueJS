@@ -55,5 +55,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .c-image__container {
+    height: auto;
+  }
 </style>

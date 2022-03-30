@@ -3,7 +3,7 @@
     <div class="row -vcenter imageTexte">
       <div class="col-l-7">
         <div class="c-image__container">
-          <img src="img/m22_home_concept.png" alt="" />
+          <img src="img/m22_home_concept.png" alt="Visuel de la chaussure M-22" />
         </div>
       </div>
       <div class="col-l-5">
@@ -54,7 +54,7 @@
 .c-text__container {
   height: 100%;
   .c-text__innerContainer {
-    margin: 100px 0;
+    margin: 50px 0;
   }
 }
 </style>
