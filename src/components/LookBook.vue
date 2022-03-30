@@ -12,7 +12,7 @@
     </div>
 
 
-    <div id="image-slider" class="splide">
+    <div id="lookbook-slider" class="splide">
       <div class="splide__track" id="splide__track">
         <Splide :options="options" >
           <splide-slide>
@@ -91,7 +91,7 @@ export default {
 }
 
 @media screen and (min-width: $large) {
-  #image-slider {
+  #lookbook-slider {
     display: none;
   }
 }
