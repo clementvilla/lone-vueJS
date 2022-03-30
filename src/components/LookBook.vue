@@ -14,7 +14,7 @@
 
     <div id="lookbook-slider" class="splide">
       <div class="splide__track" id="splide__track">
-        <Splide :options="options" >
+        <Splide>
           <splide-slide>
             <!-- image basket blanche côté -->
             <img :src="data.acf.lookbook.slider_lookbook[0].img_lookbook.url" alt="Image slider 1">

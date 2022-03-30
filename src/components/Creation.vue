@@ -66,3 +66,15 @@ img {
   width: 100%;
 }
 </style>
+<style lang="scss" scoped>
+
+p{
+ @media screen and (max-width: 639px){
+   text-align: center;
+ }
+}
+.cont{
+  display: block;
+    margin: auto;
+}
+</style>

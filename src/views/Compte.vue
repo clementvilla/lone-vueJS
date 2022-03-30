@@ -1,13 +1,23 @@
 <template>
   <div class="page_profil">
-      coucou
-    <div v-if="chaussure.length" class="shoes-list">
-      <h1>Liste des chaussures</h1>
-      <div v-for="chaussure in chaussures" :key="chaussure.id" class="chaussure">
-        <p>{{chaussure.title.rendered}}</p>
-        <img :src="chaussure.acf.img_url" alt="" />
+    <h1 class="title -big -textCenter">Mon compte</h1>
+    <div class="container wrapper-container">
+    <div class="row -vcenter imageTexte">
+      <div class="col-l-12">
+          <h2 class="title -small -colorWhite lineTitle -smallLine -alignLeft">Mes informations</h2>
+        <div class="c-text__informations">
+          <div class="container-informations">
+            <p>Nom d'utilisateur : {{user.displayName}}</p>
+            <p>Email : {{user.email}}</p>
+          </div>
+          <div class="cont">
+            <router-link to="/" class="fontLink"><a @click="$store.commit('removeUser')" class="button">Déconnexion</a>
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 <script>
@@ -19,14 +29,17 @@ export default {
       chaussures: [],
     };
   },
+  computed:{
+    user(){
+      return this.$store.state.user
+    },
+  },
   created() {
-    console.log('gfdgdf');
     axios
       .get(`https://lone.ambregeiss.fr/wp-json/wp/v2/chaussure?author=${this.$store.state.user.id}`)
       .then(
         function (response) {
           this.data = response.data;
-          console.log('egege', response.data)
         }.bind(this)
       )
       .catch(function (error) {
@@ -35,3 +48,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.c-text__informations{
+  display: flex;
+  justify-content: space-between;
+}
+</style>

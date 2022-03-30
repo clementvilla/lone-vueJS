@@ -37,6 +37,9 @@
       closeLike() {
         this.$emit('closeLike');
       },
+      closeConnexion() {
+        this.$emit('closeConnexion');
+      },
       closeEnd() {
         this.$emit('closeEnd');
       },

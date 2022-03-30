@@ -55,9 +55,12 @@
             />
           </div>
         </div>
+        <div class="row link-compte">
+          <router-link to="/login" class="fontLink">Déjà un compte ? Se connecter !</router-link>
+        </div>
 
         <div class="cont">
-          <button type="submit" class="button">S'inscrire</button>
+          <a type="submit" class="button">S'inscrire</a>
         </div>
       </form>
     </div>

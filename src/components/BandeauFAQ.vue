@@ -81,11 +81,11 @@ export default {
     .c-bandeauFaq__containerTitle {
     text-align: center;
     margin-bottom: 30px !important;
+    p {
+      margin: 0 0 30px 0 !important;
+      width: 100% !important;
+    }
   } 
-  p {
-    margin: 0 0 30px 0 !important;
-    width: 100% !important;
-  }
   .c-bandeauFaq .c-bandeauFaq__containerTextBtn {
     justify-content: center;
   }

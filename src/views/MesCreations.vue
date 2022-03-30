@@ -13,7 +13,7 @@ export default {
   components: {
     Creation,
     TitrePage,
-  }
+  },
 };
 </script>
 

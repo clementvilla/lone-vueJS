@@ -39,6 +39,12 @@
               <!-- image basket blanche deriere -->
               <img src="@/assets/deriere.png" alt="" />
               <!-- Image avant chaussure vue 3 -->
+              <img class="layer bleu avant vue3" alt="">
+              <img class="layer vert avant vue3" alt="">    
+              <img class="layer violet avant vue3" alt="">
+              <img class="layer bleu bande vue3" alt="">    
+              <img class="layer vert bande vue3" alt="">    
+              <img class="layer violet bande vue3" alt=""> 
               <img class="layer bleu mousse vue3" src="@/assets/mousse-arriere-bleu.png" alt="">
               <img class="layer vert mousse vue3" src="@/assets/mousse-arriere-verte.png" alt=""> 
               <img class="layer violet mousse vue3" src="@/assets/mousse-arriere-violette.png" alt="">                
@@ -47,8 +53,10 @@
         </div>
       </div>
       <div class="c-chaussure__buttonContainer">
-        <div @click="showEnding()" class="cont">
+        <div class="container_end">
+          <div @click="showEnding()" class="cont">
           <a class="button">Terminé</a>
+        </div>
         </div>
           <svg v-if="user.displayName != null" @click="saveShoeHandler(); alertLike();" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
           <svg @click="showModal()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
@@ -66,8 +74,8 @@
       </template>
 
       <template v-slot:footer>
-        <div>
-          Bien joué
+        <div @click="closeEnd" class="modalLink">
+          Retour à la personnalisation
         </div>
       </template>
     </Modal>
@@ -94,6 +102,25 @@
         </div>
         <div @click="closeLike" class="modalLink">
           Retour à la personnalisation
+        </div>
+      </template>
+    </Modal>
+    <Modal
+      v-if="user.displayName == null"
+      v-show="isConnexionVisible"
+      @closeConnexion="closeConnexion"
+      >
+
+      <template v-slot:body>
+        <p class="fontText">Pour pouvoir enregistrer et précommander <br>votre paire vous devez vous connecter</p>
+      </template>
+
+      <template v-slot:footer>
+        <div class="modalLink">
+          <router-link to="/login" class="fontLink">Se connecter</router-link>
+        </div>
+        <div @click="closeConnexion" class="modalLink">
+          Continuer la personnalisation
         </div>
       </template>
     </Modal>
@@ -160,6 +187,7 @@ export default {
         isLikeVisible: false,
         isModalVisible: false,
         isEndingVisible: false,
+        isConnexionVisible: false,
         shoeName: '',
         shoeCreated: false,
       options: {
@@ -195,6 +223,7 @@ export default {
     };
   },
   mounted() {
+    this.showConnexion()
     this.canvas = document.querySelector('#splide01-slide01')
     this.canvas2 = document.querySelector('#splide01-slide02')
     this.canvas3 = document.querySelector('#splide01-slide03')
@@ -210,6 +239,9 @@ export default {
     showEnding(){
       this.isEndingVisible = true;
     },
+    showConnexion() {
+      this.isConnexionVisible = true;
+    },
     closeModal() {
       this.isModalVisible = false;
     },
@@ -218,6 +250,9 @@ export default {
     },
     closeEnd(){
       this.isEndingVisible = false;
+    },
+    closeConnexion(){
+      this.isConnexionVisible = false;
     },
        saveShoeHandler() {
             // First, we need to get an image of the finalized shoe
@@ -322,6 +357,12 @@ export default {
 
             //Pour la slide 2
             this.canvas2.querySelectorAll(`.${this.configuration.parts}`)
+            .forEach((item) => {
+              item.classList.remove("show");
+            });
+
+            //Pour la slide 3
+            this.canvas3.querySelectorAll(`.${this.configuration.parts}`)
             .forEach((item) => {
               item.classList.remove("show");
             });
@@ -442,12 +483,16 @@ export default {
   }
   @include large-down {
     width: 100%;
-    height: 60%;
+    height: 50%;
+    img{
+      width: 55%;
+    }
+  }
+  @media (max-width:800px){
     img{
       width: 65%;
     }
   }
-  
   .vue1, .vue2, .vue3{
     display:none;
   }
@@ -468,12 +513,12 @@ export default {
   display: flex;
   justify-content: center;
   @include large-down {
+    flex-wrap: wrap;
     position: absolute;
     bottom: 0;
-    height: 80px;
+    height: 140px;
     background-color: $black;
     width: 100%;
-    align-items: center;
   }
   svg {
     width: 32px;
@@ -500,7 +545,7 @@ export default {
     left: 0;
     width: 100%;
     height: 25%;
-    bottom: 80px;
+    bottom: 140px;
     top: initial;
     overflow-y: hidden;
     overflow-x: scroll;
@@ -555,7 +600,7 @@ export default {
   border-top: solid 1px $primaryColor;
   @include large-down {
     width: 100%;
-    height: 60px;
+    height: 80px;
   }
   a {
     width: 100%;
@@ -683,6 +728,7 @@ export default {
   width: 32px;
   height: 32px;
   cursor: pointer;
+  z-index: 9999999;
 }
 .modalLink, .modalLink a{
   font-size: 14px;
@@ -691,6 +737,14 @@ export default {
   cursor: pointer;
   &:hover{
     text-decoration: underline $primaryColor;
+  }
+}
+.container_end{
+  width: 100%;
+  order: 1;
+  .cont{
+    display: block;
+    margin: auto;
   }
 }
 </style>

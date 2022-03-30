@@ -14,9 +14,6 @@
               required
             />
           </div>
-        </div>
-
-        <div class="row">
           <div class="container_input">
             <label class="fontLink" for="mdp">MOT DE PASSE</label>
             <input
@@ -30,13 +27,17 @@
           </div>
         </div>
 
-        <div class="cont">
-          <button type="submit" class="button">Connexion</button>
+        <div class="row link-compte">
+          <router-link to="/register" class="fontLink">Vous n'avez pas de compte ? Créez un compte</router-link>
+        </div>
+
+          <div class="cont">
+          <a class="button"><input type="submit" value="">S'inscrire</a>
         </div>
       </form>
     </div>
     <div v-if="success">
-      <p style="color: green">Votre inscription est réussi !</p>
+      <p style="color: green">Votre connexion est réussi !</p>
     </div>
 
     <div v-if="error">
@@ -116,6 +117,12 @@ input {
   flex-direction: column;
   padding: 20px;
   width: 50%;
+}
+
+.link-compte{
+  justify-content: center;
+  font-size: 16px;
+  padding-top: 20px;
 }
 
 .container_textarea {

@@ -94,13 +94,24 @@
             transition-delay: 0.25s;
         }
     }
+    @include large-down {
+      padding: 10px 35px;
+    }
 }
 
+.cont{
+  input[type=submit]{
+    border: none;
+    width: 0px;
+    cursor: pointer;
+  }
+}
 .cont{
     background-color: $white;
     transform:skewX(-15deg);
     width: fit-content;
     height: 44.8px;
+    cursor: pointer;
     &::after{
         position: absolute;
         top: 7px;

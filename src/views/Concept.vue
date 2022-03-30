@@ -20,7 +20,9 @@ export default {
     return {
       data: {
         acf:{
-          
+          sectionimgtext_3:{
+            paragraph:'',
+          }
         }
       },
     };
